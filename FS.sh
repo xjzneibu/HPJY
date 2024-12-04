@@ -24,10 +24,10 @@ iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ssl.msdk.qq.com  -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ssl.msdk.qq.com  -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 Black='\033[0;30m'        # Black
@@ -224,7 +224,7 @@ iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
-echo -e "\033[5;46;42;37m            【 小叽猪67 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪内部 】                 \033[0m"
 
 
 
