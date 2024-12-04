@@ -6,7 +6,7 @@ am force-stop com.tencent.tmgp.pubgmhd
 iptables -F 
 iptables -X 
 iptables -Z
-echo "清理"
+echo "清理"★小叽猪内部
 
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
@@ -498,7 +498,7 @@ echo -ne '                   \033[1;33m  ■■■□□□□□□□30% \r'
 
 
 #登录
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ssl.msdk.qq.com  -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
 #语音
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.gcloudcs.com  -j ACCEPT
 
