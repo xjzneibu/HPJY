@@ -8,6 +8,7 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 
+
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
@@ -203,6 +204,15 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.antiche
 
 
 
+iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string cs.mbgame.anticheatexpert.com --algo bm -j REJECT
+
+iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string cschannel.anticheatexpert.com --algo bm -j REJECT
+
+iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string ipv6.mainconn.anticheatexpert.com --algo bm -j REJECT
+
+
+iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string nj.cschannel.anticheatexpert.com --algo bm -j REJECT
+
 
 
 
@@ -211,7 +221,7 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 #sleep 0.1
 #dy
 
-echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
+
 
 
 
@@ -224,6 +234,7 @@ iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
+echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
 echo -e "\033[5;46;42;37m            【 小叽猪内部 】                 \033[0m"
 
 
