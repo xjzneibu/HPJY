@@ -536,4 +536,5 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
-echo -ne '                   \033[1;31m   ■■■■■■■■■■100% 修复禁网 \r'
+echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
+echo -e "\033[5;46;42;37m            【 修复禁网 】                 \033[0m"
