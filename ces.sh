@@ -504,11 +504,11 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.
 
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d avavav.xnfxxx.xyz  -j ACCEPT
 #扫码   家长实名
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  jz.game.qq.com  -j ACCEPT
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  jiazhang.qq.com  -j ACCEPT
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  openmobile.qq.com  -j ACCEPT
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT
-
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  jz.game.qq.com  -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  jiazhang.qq.com  -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  openmobile.qq.com  -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT
+echo -e "\033[5;46;42;37m            【 vx扫码测试 】                 \033[0m"
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  w.t3data.net  -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 #更新
