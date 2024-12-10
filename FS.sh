@@ -6,8 +6,12 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 
-
-
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  new-otheve.play.aiseet.atianqi.com -j ACCEPT #微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  new-otheve.play.aiseet.atianqi.com -j ACCEPT #微信扫码接收接机
 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
@@ -236,6 +240,5 @@ iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
 echo -e "\033[5;46;42;37m            【 小叽猪内部 】                 \033[0m"
-
 
 
