@@ -3,6 +3,9 @@
 rm -r /data/小叽猪/26
 clear
 #am force-stop com.tencent.tmgp.pubgmhd
+ip6tables -F 
+ip6tables -X 
+ip6tables -Z
 iptables -F 
 iptables -X 
 iptables -Z
@@ -245,9 +248,9 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 80 -j D
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
 #ipv6
 
 ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
@@ -465,9 +468,9 @@ iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 80 -j D
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
 #ipv6
 
 ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
@@ -508,6 +511,9 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  new-otheve.play.aiseet.atianqi.com -j ACCEPT #微信扫码接收接机
 
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+ip6tables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  w.t3data.net  -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 #更新
@@ -536,4 +542,4 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 修复禁网 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 】                 \033[0m"
