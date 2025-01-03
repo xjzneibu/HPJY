@@ -6,6 +6,19 @@ uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{prin
 
 
 
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+
+
+
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+
+
 
 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
@@ -55,7 +68,26 @@ echo -e "\033[5;46;42;37m            【 开始载入 】                 \033[0
 
 
 
-
+echo -e "\033[33m
+${Magenta}⠀⠀⠀⠀⠀⢀⣴⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠐⣖⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⢀⣴⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠙⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⢴⣾⣿⣿⣿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠘⢿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠉⢧⡘⢿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠑⢀⠙⢿⣿⣿⣷⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣷⣌⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣷⣼⢢⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣿⣿⡇⣼⣧⣬⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⢌⢻⣿⣿⣷⣿⡒⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⠀⣸⣭⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣷⣆⣀⣤⣀⣀⣠⣄⡀⠀⠀⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣷⣤⣾⣿⢿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⣿⡿⢿⣾⣤⡦⢤⣤⣛⣄⡀⣀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠻⣿⣧⡙⢿⣷⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣀⣀⣨⣿⣿⡿⣿⣿⣯⣙⢒⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣷⣙⢿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢙⣿⣿⣿⣿⣿⣿⡉⠻⠿⠿⠷⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣶⣝⢿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠱⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣦⡙⢿⣷⡄⠀⠀⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠻⡛⠿⠋⠙⢿⣿⣿⣧⣄⡀⠀⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣟⢠⡻⣿⣶⡄⠀⠀⠀⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠀⠀⠀⠀⠉⠻⣿⣿⣿⣷⡄${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣯⣌⠻⣿⣧⣴⡄⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⠟${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣶⣝⢿⣿⣿⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢿⠿⠃⠀${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣿⣷⣽⣿⠀⠀
+${Magenta}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠶⠔⠁${Cyan}⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⠿⠿⠀⠀⠀"
 
 
 echo -ne '                   \033[1;37m  □□□□□□□□□□0% \r'
@@ -123,6 +155,7 @@ ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
 
 
 
+
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
@@ -186,7 +219,7 @@ ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,
 ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
 ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
 
-
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
@@ -197,21 +230,8 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
+
 #好好
-
-
-
-
-iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string cs.mbgame.anticheatexpert.com --algo bm -j REJECT
-
-iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string cschannel.anticheatexpert.com --algo bm -j REJECT
-
-iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string ipv6.mainconn.anticheatexpert.com --algo bm -j REJECT
-
-
-iptables -I OUTPUT -p all -m string -m owner --uid-owner=$uid   --string nj.cschannel.anticheatexpert.com --algo bm -j REJECT
-
 
 
 
@@ -226,13 +246,7 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid -j DROP
-ip6tables -I OUTPUT -m owner --uid-owner=$uid -j DROP
-sleep 5
-iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
-ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
-iptables -D OUTPUT -m owner --uid-owner=$uid -j DROP
-ip6tables -D OUTPUT -m owner --uid-owner=$uid -j DROP
+
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
 echo -e "\033[5;46;42;37m            【 小叽猪内部 】                 \033[0m"
 

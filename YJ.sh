@@ -516,6 +516,136 @@ echo -ne '                   \033[1;33m  ■■■□□□□□□□30% \r'
 #测试禁网
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  nj.cschannel.anticheatexpert.com -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d  nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8085 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8085 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 50000 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 50000 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j DROP
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 53 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 53 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
+#ipv6
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
+
+
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+#好好
+
+
+
+
+
+
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 8085 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 8085 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 50000 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 50000 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 20000 -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 20000 -j DROP
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 443 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 53 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 53 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 80 -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 80 -j DROP
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
+#ipv6
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 443 -j DROP  #禁止访问所有https
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -d 0.0.0.0/0 --dport 80 -j DROP   #禁止访问所有http
+
+
+
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
+
+#好好
+
+
+
 
 
 
@@ -531,6 +661,10 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
 ip6tables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT #微信扫码授权接口
 ip6tables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT #微信扫码接收接机
+
+
+
+
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp -d  w.t3data.net  -j ACCEPT
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 #更新
