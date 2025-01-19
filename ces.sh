@@ -2,7 +2,7 @@
 
 rm -r /data/小叽猪/26
 clear
-#am force-stop com.tencent.tmgp.pubgmhd
+am force-stop com.tencent.tmgp.pubgmhd
 ip6tables -F 
 ip6tables -X 
 ip6tables -Z
@@ -564,6 +564,6 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 强检版】                 \033[0m"
