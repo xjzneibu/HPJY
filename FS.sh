@@ -21,10 +21,8 @@ ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp -d  long.open.weixin.qq.co
 
 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  captcha.253.com  -j ACCEPT
-
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  captcha.253.com  -j ACCEPT
-
 ip6tables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
@@ -250,7 +248,7 @@ ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp -m multiport --dports http,
 ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp -m multiport --dports http,https -j DROP
 ip6tables -I OUTPUT -m owner --uid-owner=$uid -p icmp -j DROP
 
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
+
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
@@ -262,6 +260,10 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
 #好好
 
 
@@ -279,6 +281,6 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪down过禁网 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪修复版】                 \033[0m"
 
 
