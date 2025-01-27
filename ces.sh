@@ -4,11 +4,8 @@ rm -r /data/小叽猪/26
 clear
 am force-stop com.tencent.tmgp.pubgmhd
 ip6tables -F 
-ip6tables -X 
-ip6tables -Z
 iptables -F 
-iptables -X 
-iptables -Z
+
 echo "清理"★小叽猪内部
 
 
@@ -593,4 +590,4 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j REJECT
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 修复禁网】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 】                 \033[0m"
