@@ -573,8 +573,8 @@ echo -ne '                   \033[1;32m  ■■■■■■□□□□50% \r'
 #sleep 0.1
 
 
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  captcha.253.com  -j ACCEPT
-#ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  captcha.253.com  -j ACCEPT
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
 
 
 
@@ -587,8 +587,8 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 
 #iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
+#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 1.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 2.0 】                 \033[0m"

@@ -45,6 +45,10 @@ iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.antiche
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
 
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+
+
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
@@ -265,9 +269,9 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
+#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
+#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
 
 
 
@@ -293,6 +297,6 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 1.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 2.0 】                 \033[0m"
 
 
