@@ -12,12 +12,12 @@ ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "50000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
@@ -35,12 +35,12 @@ ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "50000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
@@ -58,12 +58,12 @@ ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "50000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
@@ -82,12 +82,12 @@ echo -ne '                   \033[1;32m  ■■■■■■□□□□50% \r'
 #iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  captcha.253.com  -j ACCEPT
 #ip6tables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
 
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 
 #iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
@@ -307,22 +307,26 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.an
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
 
 
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j DROP
+#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j DROP
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 
 
 
-i
+
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.gcloudcs.com  -j ACCEPT
 #好好
 
@@ -335,20 +339,12 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid  -j DROP
-ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j DROP
-sleep 3
-iptables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
-iptables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
-iptables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
+
 
 
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 5.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 5.1 】                 \033[0m"
 
 
