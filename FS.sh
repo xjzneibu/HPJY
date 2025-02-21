@@ -337,19 +337,17 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 iptables -I OUTPUT -m owner --uid-owner=$uid  -j DROP
 ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j DROP
 sleep 3
-iptables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
-ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
-ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
-iptables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
-ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
-
-
+iptables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
+iptables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -j DROP
 
 
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 4.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 4.1 】                 \033[0m"
 
 
