@@ -3,77 +3,99 @@ rm -r /data/小叽猪/26
 clear
 
 uid=`cat /data/system/packages.list | grep com.tencent.tmgp.pubgmhd | awk '{print $2}'`
-
-# iptables 命令相关
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
-# 语音
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d avavav.xnfxxx.xyz  -j ACCEPT
-# 扫码   家长实名
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT # 微信扫码授权接口
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT # 微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.gcloudcs.com  -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT 
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT 
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT 
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "50000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
 
-# ip6tables 命令相关
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT # 微信扫码授权接口
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT # 微信扫码接收接机
 
-
-# iptables 命令相关
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
-# 语音
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d avavav.xnfxxx.xyz  -j ACCEPT
-# 扫码   家长实名
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT # 微信扫码授权接口
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT # 微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.gcloudcs.com  -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT 
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT 
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT 
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "50000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
 
-# ip6tables 命令相关
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT # 微信扫码授权接口
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT # 微信扫码接收接
 
-
-# iptables 命令相关
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  ap6.ssl.msdk.qq.com  -j ACCEPT
-# 语音
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d avavav.xnfxxx.xyz  -j ACCEPT
-# 扫码   家长实名
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT # 微信扫码授权接口
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT # 微信扫码接收接机
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.gcloudcs.com  -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT 
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT 
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT 
+ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT 
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 8085 -d download.1.418021106.gcloudpg.qq.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "20000" -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport "50000" -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j REJECT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
 iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
-iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+echo -ne '                   \033[1;32m  ■■■■■■□□□□50% \r'
 
-# ip6tables 命令相关
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  open.weixin.qq.com  -j ACCEPT # 微信扫码授权接口
-ip6tables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  long.open.weixin.qq.com  -j ACCEPT # 微信扫码接收接
+
+echo -ne '                   \033[1;32m  ■■■■■■□□□□50% \r'
+#sleep 0.1
+
+
+#sleep 0.1
+
+#iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d  captcha.253.com  -j ACCEPT
+#ip6tables -D OUTPUT -m owner --uid-owner=$uid -p tcp --dport 443 -j ACCEPT
+
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
+
+#iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
+iptables -D OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
+
+
+
 
 Black='\033[0;30m'        # Black
 Red='\033[0;31m'          # Red
@@ -289,12 +311,12 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j DROP
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
-#iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
-
-
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j REJECT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j REJECT
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 
@@ -312,12 +334,22 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 
+iptables -I OUTPUT -m owner --uid-owner=$uid  -j DROP
+ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j DROP
+sleep 3
+iptables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
+ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
+ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
+ip6tables -I OUTPUT -m owner --uid-owner=$uid  -j ACCEPT
+
 
 
 
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 3.2 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 4.0 】                 \033[0m"
 
 
