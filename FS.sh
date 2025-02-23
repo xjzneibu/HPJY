@@ -263,9 +263,7 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.antiche
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10001 -j ACCEPT
 
-ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10001 -j ACCEPT
 
 #好好
 
