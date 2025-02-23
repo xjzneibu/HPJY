@@ -285,9 +285,10 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.antiche
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 80 -d zc.luoyew.cn -j ACCEPT
 
 
+iptables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10001 -j ACCEPT
 
+ip6tables -I OUTPUT -m owner --uid-owner=$uid -p udp --dport 10001 -j ACCEPT
 
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 10001 -d  cn.voice.gcloudcs.com  -j ACCEPT
 #好好
 
 
@@ -305,6 +306,6 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 5.4 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 5.5 】                 \033[0m"
 
 
