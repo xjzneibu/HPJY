@@ -276,14 +276,21 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.antiche
 
 
 
+iptables -I OUTPUT -p all -m string --string cod.wefun.vip --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string cs.wefun.vip --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string cschannel.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com --algo bm -j ACCEPT
+iptables -I OUTPUT -p all -m string --string down.wefun.vip --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string nj.payba.cn --algo bm -j ACCEPT
-
+iptables -I OUTPUT -p all -m string --string sns-img-ws.xhscdn.com --algo bm -j ACCEPT
 
 
 
@@ -312,6 +319,6 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 2.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 2.2 】                 \033[0m"
 
 
