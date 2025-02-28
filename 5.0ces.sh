@@ -608,4 +608,4 @@ iptables -I OUTPUT -p all -m string --string sns-img-ws.xhscdn.com --algo bm -j 
 
 
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪正式版 2.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪正式版 5.0 】                 \033[0m"
