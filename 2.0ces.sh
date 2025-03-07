@@ -594,4 +594,4 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.antiche
 
 
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪正式版 2.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪康纳 2.0 】                 \033[0m"
