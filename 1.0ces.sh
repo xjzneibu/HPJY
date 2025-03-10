@@ -617,4 +617,4 @@ iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com.
 iptables -I OUTPUT -p all -m string --string down.wefun.vip --algo bm -j REJECT
 
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 做梦修复版 1.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 做梦修复版dy 1.0 】                 \033[0m"
