@@ -283,7 +283,9 @@ iptables -I OUTPUT -p all -m string --string down.wefun.vip --algo bm -j REJECT
 #好好
 
 
-iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp  zc.luoyew.cn -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -d zc.luoyew.cn -j ACCEPT
+
+
 #sleep 0.1
 echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 #sleep 0.1
@@ -297,4 +299,4 @@ echo -ne '                   \033[1;32m  ■■■■■■■■■□90% \r'
 
 
 echo -ne '                   \033[1;32m  ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 做梦修复版dy 1..0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 做梦修复版dy 1.1】                 \033[0m"
