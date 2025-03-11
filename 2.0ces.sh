@@ -519,4 +519,4 @@ iptables -I OUTPUT -p all -m string --string down.wefun.vip --algo bm -j ACCEPT
 
 
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪稳定 2.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 2.0 】                 \033[0m"
