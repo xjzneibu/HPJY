@@ -500,13 +500,26 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
-
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.wefun.vip -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.wefun.vip -j ACCEPT
+
 
 iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com --algo bm -j REJECT
 iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com --algo bm -j ACCEPT
 iptables -I OUTPUT -p all -m string --string down.wefun.vip --algo bm -j ACCEPT
+
+
+
 
 iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com --algo bm -j REJECT
 iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com --algo bm -j ACCEPT
@@ -519,4 +532,4 @@ iptables -I OUTPUT -p all -m string --string down.wefun.vip --algo bm -j ACCEPT
 
 
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 2.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 2.1 】                 \033[0m"
