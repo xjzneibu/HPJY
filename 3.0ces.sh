@@ -490,7 +490,6 @@ echo -ne '                   \033[1;32m  ■■■■■■□□□□50% \r'
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
-
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d ipv6.mainconn.anticheatexpert.com -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d nj.cschannel.anticheatexpert.com -j ACCEPT
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.anticheatexpert.com -j ACCEPT
@@ -501,17 +500,31 @@ iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d cs.mbgame.an
 
 
 iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com -j ACCEPT
 
 
-iptables -I OUTPUT -p all -m string --string cs.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mbgame.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cs.mbgame.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string cschannel.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.anticheatexpert.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string ipv6.mainconn.gamesafe.qq.com --algo bm -j ACCEPT
-iptables -I OUTPUT -p all -m string --string nj.cschannel.anticheatexpert.com --algo bm -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com -j ACCEPT
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.anticheatexpert.com.wsdvs.com.chnc.cloudcsp.com -j ACCEPT
+
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p tcp --dport 443 -d down.wefun.vip -j ACCEPT
+iptables -I OUTPUT -m owner --uid-owner=$uid  -p udp --dport 443 -d down.wefun.vip -j ACCEPT
+
+
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com --algo bm -j REJECT
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com --algo bm -j REJECT
+
+
+
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com --algo bm -j REJECT
+iptables -I OUTPUT -p all -m string --string down.anticheatexpert.com.wsdvs.com --algo bm -j REJECT
+
+
+
 
 
 
 echo -ne '                   \033[1;31m   ■■■■■■■■■■100% \r'
-echo -e "\033[5;46;42;37m            【 小叽猪 3.0 】                 \033[0m"
+echo -e "\033[5;46;42;37m            【 小叽猪 3.1 】                 \033[0m"
